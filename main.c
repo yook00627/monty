@@ -4,8 +4,14 @@ int main(int argc, char **argv)
 {
     if (argc != 2)
     {
-        printf("USAGE: monty file")
-        exit(EXIT_FAILURE)
+        printf("USAGE: monty file");
+        exit(EXIT_FAILURE);
     }
-    fd = open(argv[1])
+    fd = fopen(argv[1], "r");
+    if (fd == -1)
+    {
+        printf("Error: Can't open file <file>");
+        exit(EXIT_FAILURE);
+    }
+
 }

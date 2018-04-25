@@ -15,6 +15,5 @@ void free_stack(stack_t **head)
 		free(*head);
 		*head = current;
 	}
-
-	free(arg_holder.input_str)
+	free(arg_holder.input_str);
 }

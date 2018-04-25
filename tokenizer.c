@@ -10,6 +10,7 @@ void tokenizer(char *string)
         lines = strtok_r(string, "\n", &save);
         while (lines != '\0')
         {
+		printf("%s\n", lines);
                 command = strtok(lines, "\t ");
                 arg_holder.arg = strtok(NULL, "\t ");
 		arg_holder.success = 1;

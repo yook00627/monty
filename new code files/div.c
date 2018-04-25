@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void add(stack_t **stack, unsigned int line_num)
+void div(stack_t **stack, unsigned int line_num)
 {
         stack_t *current = NULL;
          int length = 0, total = 0;
@@ -13,13 +13,19 @@ void add(stack_t **stack, unsigned int line_num)
         }
         if (length < 1)
         {
-                printf("L%d: can't add, stack too short\n", line_num);
+                printf("L%d: can't div, stack too short\n", line_num);
+                exit(EXIT_FAILURE)
+        }
+
+        if (*stack->n == 0)
+        {
+                printf("L%d: division by zero\n", line_num);
                 exit(EXIT_FAILURE)
         }
 
         current = *stack;
 
-        total = current->n + current->next->n;
+        total = current->next->n / current->n;
 
         /*run pop if it works then change second element with total and return*/
 
@@ -28,5 +34,4 @@ void add(stack_t **stack, unsigned int line_num)
         *stack->n = total;*/
 
        return;
-
 }

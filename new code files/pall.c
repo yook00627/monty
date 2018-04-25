@@ -2,13 +2,16 @@
 
 void pall(stack_t **stack, unsigned int line_num)
 {
+        stack_t *current;
+
         if (stack == NULL || *stack == NULL)
                 return;
         
-        while (*stack != NULL)
+        current = *stack;
+        while (current != NULL)
         {
-                printf("%d\n", *stack->n);
-                stack = stack->next;
+                printf("%d\n", *current->n);
+                current = current->next;
         }
         return;
 }

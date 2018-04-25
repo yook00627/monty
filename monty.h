@@ -41,7 +41,7 @@ typedef struct instruction_s
 
 extern stack_t stack;
 
-
+char *make_buffer(char *file_name);
 
 
 #endif

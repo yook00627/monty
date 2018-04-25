@@ -18,8 +18,8 @@ char *make_buffer(char *file_name)
 	str = malloc(sizeof(char) * (file_size + 1));
 	if (str == NULL)
 	{
-		prtinf("Error: malloc failed");
-		exit(EXIT_FAILURE)
+		printf("Error: malloc failed");
+		exit(EXIT_FAILURE);
 	}
 	fread(str, file_size, 1, file_input);
 	str[file_size] = '\0';

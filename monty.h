@@ -49,7 +49,7 @@ typedef struct var_struct
 
 extern global_v arg_holder;
 char *make_buffer(char *file_name);
-void opcode(char *command, unsigned int line_num, char *str, stack_t **stack);
+void opcode(char *command, unsigned int line_num, stack_t **stack);
 void tokenizer(char *string);
 void free_stack(stack_t **head);
 void push(stack_t **stack, unsigned int line_num);

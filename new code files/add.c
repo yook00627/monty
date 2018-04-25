@@ -14,20 +14,17 @@ void add(stack_t **stack, unsigned int line_num)
         if (length < 1)
         {
                 printf("L%d: can't add, stack too short\n", line_num);
-                arg_holder.success = 0;
-                return;
+                free_stack(stack);
+                exit(EXIT_FAILURE);
         }
 
         current = *stack;
 
         total = current->n + current->next->n;
 
-        /*run pop if it works then change second element with total and return*/
+        pop(stack, line_num);
 
-        /* pop(stack, line_num);
-
-        *stack->n = total;*/
-
-       return;
+        *stack->n = total;
+        return;
 
 }

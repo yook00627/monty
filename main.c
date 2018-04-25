@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	str = make_buffer(argv[1]);
-	printf("%s\n", str);
+	/*tokenizer(str);*/
 	free(str);
 	return (0);
 }

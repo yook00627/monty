@@ -1,6 +1,9 @@
 #ifndef MONTY
 #define MONTY
 
+
+/*create extern struct with char *arg and int success*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -8,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -39,9 +43,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t stack;
+
 
 char *make_buffer(char *file_name);
-
-
 #endif

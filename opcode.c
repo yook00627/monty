@@ -20,7 +20,8 @@ void opcode(char *command, unsigned int line_num, char *str, stack_t **stack)
 			if (!(arg_holder.success))
 			{
 				free(str);
-				
+				if (*stack != NULL)
+					free_stack(stack);
 				exit(EXIT_FAILURE);
 			}
 		}

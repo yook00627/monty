@@ -3,19 +3,20 @@ global_v arg_holder;
 
 void tokenizer(char *string)
 {
-        unsigned int linenum = 1;
-        stack_t *stack = NULL;
-        char *lines = NULL, *command = NULL, *save;
+	unsigned int linenum = 1;
+	stack_t *stack = NULL;
+	char *lines = NULL, *command = NULL, *save;
 
-        lines = strtok_r(string, "\n", &save);
-        while (lines != '\0')
-        {
+	lines = strtok_r(string, "\n", &save);
+	while (lines != '\0')
+	{
 		printf("%s\n", lines);
-                command = strtok(lines, "\t ");
-                arg_holder.arg = strtok(NULL, "\t ");
+		command = strtok(lines, "\t ");
+		arg_holder.arg = strtok(NULL, "\t ");
 		arg_holder.success = 1;
-                opcode(command, linenum, string, &stack);
-                linenum++;
+		opcode(command, linenum, string, &stack);
+		linenum++;
 		lines = strtok_r(NULL, "\n", &save);
-        }
+	}
+	free_stack(&stack);
 }

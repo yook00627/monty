@@ -4,7 +4,7 @@ int main(int argc, char **argv)
 {
 	int file_size = 0;
 	FILE *file_input;
-	char *str;
+	char *str = NULL;
 
 	if (argc != 2)
 	{
@@ -20,9 +20,11 @@ int main(int argc, char **argv)
 	fseek(file_input, 0, SEEK_END);
 	file_size = ftell(file_input);
 	rewind(file_input);
-	str = malloc(sizeof(char) * file_size);
+	str = malloc(sizeof(char) * (file_size + 1));
 	fread(str, file_size, 1, file_input);
-	printf("%s\n", str);
+	str[file_size] = '\0';
+	
 	fclose(file_input);
+	free(str);
 	return (0);
 }

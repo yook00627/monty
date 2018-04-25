@@ -2,9 +2,12 @@
 
 char *make_buffer(char *file_name)
 {
-	int file_size = 0;
+	int size = 0;
 	FILE *file_input;
 	char *str = NULL;
+	unsigned int linenum = 1;
+	stack_t *stack = NULL;
+	char *command = NULL;
 
 	file_input = fopen(file_name, "r");
 	if (file_input == NULL)
@@ -12,18 +15,17 @@ char *make_buffer(char *file_name)
 		printf("Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
-	fseek(file_input, 0, SEEK_END);
-	file_size = ftell(file_input);
-	rewind(file_input);
-	str = malloc(sizeof(char) * (file_size + 1));
-	if (str == NULL)
+
+	while (getline(&str, &size, file_input) != -1)
 	{
-		printf("Error: malloc failed");
-		exit(EXIT_FAILURE);
+		arg_holder.input_str = str;
+		command = strtok(str, "\t ");
+		arg_holder.arg = strtok(NULL, "\t ");
+		opcode(command, linenum, &stack);
+		linenum++;
 	}
-	fread(str, file_size, 1, file_input);
-	str[file_size] = '\0';
 	fclose(file_input);
+	free_stack(&stack);
 	return (str);
 
 }

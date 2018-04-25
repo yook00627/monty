@@ -9,6 +9,5 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	str = make_buffer(argv[1]);
-	tokenizer(str);
 	return (EXIT_SUCCESS);
 }

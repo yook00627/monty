@@ -24,12 +24,9 @@ void push(stack_t **stack, unsigned int line_num)
 {
 	stack_t *new;
 
-
 	if (!(isnum(arg_holder.arg)))
 	{
 		printf("L%u: usage: push integer\n", line_num);
-		arg_holder.success = 0;
-		return;
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)

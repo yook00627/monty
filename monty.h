@@ -44,7 +44,7 @@ typedef struct instruction_s
 typedef struct var_struct
 {
 	char *arg;
-	int success;
+	char *input_str;
 } global_v;
 
 extern global_v arg_holder;

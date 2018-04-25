@@ -14,9 +14,13 @@ void opcode(char *command, unsigned int line_num, char *str, stack_t **stack)
 		if (strcmp(ops[i].opcode, command) == 0)
 		{
 			ops[i].f(stack, line_num);
-			
+			if (!(arg_holder.success))
+			{
+				free(str);
+				
+				exit(EXIT_FAILURE);
+			}
 		}
 		i++;
 	}
-
 }

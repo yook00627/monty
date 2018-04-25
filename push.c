@@ -35,6 +35,7 @@ void push(stack_t **stack, unsigned int line_num)
 	if (new == NULL)
 	{
 		printf("Error: malloc failed");
+		free(new);
 		arg_holder.success = 0;
 		return;
 	}
@@ -50,5 +51,4 @@ void push(stack_t **stack, unsigned int line_num)
 	new->next = *stack;
 	new->prev = NULL;
 	*stack = new;
-	return;
 }

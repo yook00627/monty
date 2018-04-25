@@ -1,9 +1,6 @@
 #ifndef MONTY
 #define MONTY
 
-
-/*create extern struct with char *arg and int success*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,7 +40,13 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/*create extern struct with char *arg and int success*/
+typedef struct var_struct
+{
+	char *arg;
+	int success;
+} global_v;
 
-
+extern global_v arg_holder;
 char *make_buffer(char *file_name);
 #endif

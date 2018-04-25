@@ -1,5 +1,5 @@
 #include "monty.h"
-
+global_v arg_holder;
 
 void tokenizer(char *string)
 {

@@ -2,7 +2,7 @@
 
 char *make_buffer(char *file_name)
 {
-	int size = 0;
+	size_t size = 0;
 	FILE *file_input;
 	char *str = NULL;
 	unsigned int linenum = 1;

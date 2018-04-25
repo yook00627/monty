@@ -10,6 +10,5 @@ int main(int argc, char **argv)
 	}
 	str = make_buffer(argv[1]);
 	tokenizer(str);
-	free(str);
-	return (0);
+	return (EXIT_SUCCESS);
 }

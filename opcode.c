@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void opcode(char *command, unsigned int line_num, char *str, stack_t **stack)
+void opcode(char *command, unsigned int line_num, stack_t **stack)
 {
 	int i = 0;
 	instruction_t ops[] = {

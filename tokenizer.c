@@ -7,14 +7,14 @@ void tokenizer(char *string)
 	stack_t *stack = NULL;
 	char *lines = NULL, *command = NULL, *save;
 
+	arg_holder.input_str = string;
 	lines = strtok_r(string, "\n", &save);
 	while (lines != '\0')
 	{
 		printf("%s\n", lines);
 		command = strtok(lines, "\t ");
 		arg_holder.arg = strtok(NULL, "\t ");
-		arg_holder.success = 1;
-		opcode(command, linenum, string, &stack);
+		opcode(command, linenum, &stack);
 		linenum++;
 		lines = strtok_r(NULL, "\n", &save);
 	}

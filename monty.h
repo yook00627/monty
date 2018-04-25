@@ -48,7 +48,7 @@ typedef struct var_struct
 } global_v;
 
 extern global_v arg_holder;
-char *make_buffer(char *file_name);
+void make_buffer(char *file_name);
 void opcode(char *command, unsigned int line_num, stack_t **stack);
 void free_stack(stack_t **head);
 void push(stack_t **stack, unsigned int line_num);

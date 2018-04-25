@@ -1,6 +1,6 @@
 #include "monty.h"
 
-char *make_buffer(char *file_name)
+void *make_buffer(char *file_name)
 {
 	size_t size = 0;
 	FILE *file_input;
@@ -26,6 +26,5 @@ char *make_buffer(char *file_name)
 	}
 	fclose(file_input);
 	free_stack(&stack);
-	return (str);
 
 }

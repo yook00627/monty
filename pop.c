@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * pop - pop the node from memory
+ * @stack: stack of the memory
+ * @line_num: line number
+ */
 void pop(stack_t **stack, unsigned int line_num)
 {
 	stack_t *next = NULL;

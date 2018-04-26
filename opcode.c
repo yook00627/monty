@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * opcode - check for operation code
+ * @command: cammand input
+ * @line_num: line number
+ * @stack: stack of memory
+ */
 void opcode(char *command, unsigned int line_num, stack_t **stack)
 {
 	int i = 0;

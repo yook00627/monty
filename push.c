@@ -1,24 +1,28 @@
 #include "monty.h"
 
-
+/**
+ * isnum - check if string is a number
+ * @str: string input
+ * Return: 0 if false 1 if true
+ */
 int isnum(char *str)
 {
 	if (str == NULL || *str == '\0')
-		return 0;
-	while(*str)
+		return (0);
+	while (*str)
 	{
-		if(!isdigit(*str))
-			return 0;
+		if (!isdigit(*str))
+			return (0);
 		str++;
 	}
-	return 1;
+	return (1);
 
 }
 
-
 /**
- *
- *
+ * push - push integers to memory
+ * @stack: stack of memory
+ * @line_num: line number
  */
 void push(stack_t **stack, unsigned int line_num)
 {
@@ -34,7 +38,7 @@ void push(stack_t **stack, unsigned int line_num)
 	if (new == NULL)
 	{
 		printf("Error: malloc failed");
- 		free_stack(stack);
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	new->n = atoi(arg_holder.arg);

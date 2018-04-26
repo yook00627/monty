@@ -1,10 +1,8 @@
 #include "monty.h"
 
-global_v arg_holder;
 /**
- *
- *
- *
+ * make_buffer - make the buffer and parse through the file
+ * @file_name: name of the file
  */
 void make_buffer(char *file_name)
 {

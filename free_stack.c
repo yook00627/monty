@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- *
+ * free_stack - free the stack and the str input
  * @head: input list pointer
  */
 void free_stack(stack_t **head)

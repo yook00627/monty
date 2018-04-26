@@ -7,15 +7,9 @@
 void sub(stack_t **stack, unsigned int line_num)
 {
 	stack_t *current = NULL;
-	int length = 0, total = 0;
+	int total = 0;
 
-	current = *stack;
-	while (current != NULL)
-	{
-		current = current->next;
-		length++;
-	}
-	if (length < 1)
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
 		printf("L%d: can't sub, stack too short\n", line_num);
 		free_stack(stack);

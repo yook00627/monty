@@ -22,7 +22,11 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		if (strcmp(ops[i].opcode, command) == 0)
 		{
 			ops[i].f(stack, line_num);
+			return;
 		}
 		i++;
 	}
+	printf("L%d: unknown instruction %s\n", line_num, command);
+	free_stack(stack);
+	exit(EXIT_FAILURE);
 }

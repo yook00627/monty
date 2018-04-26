@@ -40,11 +40,17 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/*create extern struct with char *arg and int success*/
+/**
+ * struct var_struct - struct for global variable
+ * @arg: arguments
+ * @input_str: input string
+ * @file: file descripter
+ */
 typedef struct var_struct
 {
 	char *arg;
 	char *input_str;
+	FILE *file;
 } global_v;
 
 extern global_v arg_holder;

@@ -19,7 +19,7 @@ void make_buffer(char *file_name)
 		printf("Error: Can't open file %s\n", file_name);
 		exit(EXIT_FAILURE);
 	}
-
+	arg_holder.file = file_input;
 	while (getline(&str, &size, file_input) != -1)
 	{
 		arg_holder.input_str = str;
@@ -38,7 +38,5 @@ void make_buffer(char *file_name)
 		opcode(command, linenum, &stack);
 		linenum++;
 	}
-	fclose(file_input);
 	free_stack(&stack);
-
 }

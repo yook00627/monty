@@ -20,6 +20,7 @@ void make_buffer(char *file_name)
 		exit(EXIT_FAILURE);
 	}
 	arg_holder.file = file_input;
+	arg_holder.SQ = 1;
 	while (getline(&str, &size, file_input) != -1)
 	{
 		arg_holder.input_str = str;

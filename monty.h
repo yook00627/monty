@@ -44,12 +44,14 @@ typedef struct instruction_s
  * struct var_struct - struct for global variable
  * @arg: arguments
  * @input_str: input string
+ * @SQ: check for stack or queue
  * @file: file descripter
  */
 typedef struct var_struct
 {
 	char *arg;
 	char *input_str;
+	int SQ;
 	FILE *file;
 } global_v;
 
@@ -72,5 +74,7 @@ void nop(stack_t **stack, unsigned int line_num);
 void sub(stack_t **stack, unsigned int line_num);
 void pchar(stack_t **stack, unsigned int line_num);
 void pstr(stack_t **stack, unsigned int line_num);
+void rotl(stack_t **stack, unsigned int line_num);
+void rotr(stack_t **stack, unsigned int line_num);
 
 #endif

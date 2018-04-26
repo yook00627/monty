@@ -1,6 +1,6 @@
 #include "monty.h"
 
-void *make_buffer(char *file_name)
+void make_buffer(char *file_name)
 {
 	size_t size = 0;
 	FILE *file_input;

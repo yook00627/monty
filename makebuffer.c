@@ -1,5 +1,11 @@
 #include "monty.h"
 
+global_v arg_holder;
+/**
+ *
+ *
+ *
+ */
 void make_buffer(char *file_name)
 {
 	size_t size = 0;

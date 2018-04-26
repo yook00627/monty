@@ -9,12 +9,12 @@ void free_stack(stack_t **head)
 
 	if (head == NULL)
 		return;
+	free(arg_holder.input_str);
+	fclose(arg_holder.file);
 	while (*head != NULL)
 	{
 		current = (*head)->next;
 		free(*head);
 		*head = current;
 	}
-	free(arg_holder.input_str);
-	fclose(arg_holder.file);
 }

@@ -6,7 +6,7 @@
  */
 void pstr(stack_t **stack, unsigned int line_num)
 {
-	stack_t current = NULL;
+	stack_t *current = NULL;
 
 	(void) line_num;
 	current = *stack;

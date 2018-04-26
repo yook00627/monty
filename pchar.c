@@ -12,7 +12,7 @@ void pchar(stack_t **stack, unsigned int line_num)
 		printf("L%d: can't pchar, stack empty\n", line_num);
 		exit(EXIT_FAILURE);
 	}
-	if (isacii((*stack)->n))
+	if (!(isascii((*stack)->n)))
 	{
 		printf("L%d: can't pchar, value out of range\n", line_num);
 		exit(EXIT_FAILURE);

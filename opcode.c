@@ -16,15 +16,18 @@ void opcode(char *command, unsigned int line_num, stack_t **stack)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
-		{"nop", nop),
+		{"nop", nop},
 		{"sub", sub},
 		{"div", _div},
 		{"mul", mul},
 		{"mod", mod},
-		{"#", comments},
 		{NULL, NULL}
 	};
 
+	if (command[0] == '#')
+	{
+		return;
+	}
 	while (ops[i].opcode != NULL)
 	{
 		if (strcmp(ops[i].opcode, command) == 0)

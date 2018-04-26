@@ -1,16 +1,16 @@
 #include "monty.h"
 /**
- * _div - divide top 2 numbers
- * @stack: inout stack address
- * @line_num: current lin num
+ * mod - modulus top 2 numbers
+ * @stack: input stack address
+ * @line_num: current line number
  */
-void _div(stack_t **stack, unsigned int line_num)
+void mod(stack_t **stack, unsigned int line_num)
 {
 	stack_t *current = NULL;
 	int length = 0, total = 0;
 
 	current = *stack;
-	while (*current != NULL)
+	while (current != NULL)
 	{
 		current = current->next;
 		length++;
@@ -22,7 +22,7 @@ void _div(stack_t **stack, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	if (*stack->n == 0)
+	if ((*stack)->n == 0)
 	{
 		printf("L%d: division by zero\n", line_num);
 		free_stack(stack);
@@ -31,7 +31,7 @@ void _div(stack_t **stack, unsigned int line_num)
 
 	current = *stack;
 
-	total = current->next->n / current->n;
+	total = current->next->n % current->n;
 
 	pop(stack, line_num);
 

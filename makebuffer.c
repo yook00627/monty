@@ -34,7 +34,7 @@ void make_buffer(char *file_name)
 			linenum++;
 			continue;
 		}
-		arg_holder.arg = strtok(NULL, "\t ");
+		arg_holder.arg = strtok(NULL, "\n\t ");
 		opcode(command, linenum, &stack);
 		linenum++;
 	}

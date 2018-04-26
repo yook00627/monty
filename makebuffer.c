@@ -19,8 +19,18 @@ void make_buffer(char *file_name)
 	while (getline(&str, &size, file_input) != -1)
 	{
 		arg_holder.input_str = str;
-		command = strtok(str, "\t ");
-		arg_holder.arg = strtok(NULL, "\t ");
+		if (*str == '\n')
+		{
+			linenum++;
+			continue;
+		}
+		command = strtok(str, "\n\t ");
+		if (command == NULL)
+		{
+			linenum++;
+			continue;
+		}
+		arg_holder.arg = strtok(NULL, "\n\t ");
 		opcode(command, linenum, &stack);
 		linenum++;
 	}
